@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetCourseDetailsResponse xmlns="http://www.namnd.org/course-details"
+xsi:schemaLocation="http://namnd.com.vn/courses course-details.xsd"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<CourseDetails>
+		<id>123</id>
+		<name>Spring with NamND</name>
+		<description>You will learn the basics of Spring Framework</description>
+	</CourseDetails>
+</GetCourseDetailsResponse>

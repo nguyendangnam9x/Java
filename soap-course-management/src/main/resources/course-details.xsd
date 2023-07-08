@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.namnd.org/course-details"
+	xmlns:tns="http://www.namnd.org/course-details"
+	elementFormDefault="qualified">
+	<!-- START Get Course Detail -->
+	<element name="GetCourseDetailsRequest">
+		<complexType>
+			<sequence>
+				<element name="id" type="int" minOccurs="1"></element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="GetCourseDetailsResponse">
+		<complexType>
+			<sequence>
+				<element name="CourseDetails" type="tns:CourseDetails"></element>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- END Get Course Detail -->
+	<!-- START Get All Course Detail -->
+	<element name="GetAllCourseDetailsRequest"/>
+	<element name="GetAllCourseDetailsResponse">
+		<complexType>
+			<sequence>
+				<element name="CourseDetails" type="tns:CourseDetails" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- END Get All Course Detail -->
+	<!-- START Delete Course Detail -->
+	<element name="DeleteCourseDetailRequest">
+		<complexType>
+			<sequence>
+				<element name="id" type="int"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="DeleteCourseDetailResponse">
+		<complexType>
+			<sequence>
+				<element name="status" type="tns:Status"/>
+			</sequence>
+		</complexType>
+	</element>
+	<simpleType name="Status">
+		<restriction base="string">
+			<enumeration value="SUCCESS"></enumeration>
+			<enumeration value="FAILURE"></enumeration>
+		</restriction>
+	</simpleType>
+	<!-- END Delete Course Detail -->
+	<complexType name="CourseDetails">
+		<sequence>
+			<element name="id" type="int"></element>
+			<element name="name" type="string"></element>
+			<element name="description" type="string"></element>
+		</sequence>
+	</complexType>
+</schema>
