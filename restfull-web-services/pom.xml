@@ -29,14 +29,14 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		
+
 		<!-- HAL Hypertext Application Language -->
 		<!-- using for non-technical team http://localhost:8080/explorer/index.html# -->
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-rest-hal-explorer</artifactId>
 		</dependency>
-		
+
 		<!-- HATEOAS using for create link -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -60,6 +60,7 @@
 		</dependency>
 		<!-- END return JSON to XML format -->
 		<!-- START Swagger Open API -->
+		<!-- http://localhost:8080/swagger-ui/index.html#/user-resource -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
@@ -81,6 +82,14 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 	</dependencies>
 
