@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by TIBCO WSDL-->
+<wsdl:definitions xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.example.com/1698140120972" xmlns:jndi="http://www.tibco.com/namespaces/ws/2004/soap/apis/jndi" xmlns:ns0="http://www.tibco.com/schemas/tibco-soap/Schemas/Schema.xsd" xmlns:ns1="http://www.tibco.com/schemas/tibco-soap/Schemas/Schema.xsd2" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="Untitled" targetNamespace="http://xmlns.example.com/1698140120972">
+    <wsdl:types>
+        <xs:schema xmlns="http://www.tibco.com/schemas/tibco-soap/Schemas/Schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/schemas/tibco-soap/Schemas/Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="Employee">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns0:EmployeeCode"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="EmployeeCode" type="xs:string"/>
+        </xs:schema>
+        <xs:schema xmlns="http://www.tibco.com/schemas/tibco-soap/Schemas/Schema.xsd2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/schemas/tibco-soap/Schemas/Schema.xsd2" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="EmployeeAge" type="xs:string"/>
+            <xs:element name="EmployeeDesignation" type="xs:string"/>
+            <xs:element name="EmployeeDetails">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns1:EmployeeAge"/>
+                        <xs:element ref="ns1:EmployeeDesignation"/>
+                        <xs:element ref="ns1:EmployeeName"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="EmployeeName" type="xs:string"/>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:service name="EmployeeWSDL-JMS">
+        <wsdl:port name="EmployeeMgrEndpoint0" binding="tns:EmployeeMgrEndpoint0Binding">
+            <soap:address location=""/>
+            <jms:connectionFactory>QueueConnectionFactory</jms:connectionFactory>
+            <jms:targetAddress destination="queue">queue.namnd</jms:targetAddress>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:portType name="EmployeeMgr">
+        <wsdl:operation name="EmployeeDetails">
+            <wsdl:input message="tns:EmployeeInput"/>
+            <wsdl:output message="tns:EmployeeOutput"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="EmployeeMgrEndpoint0Binding" type="tns:EmployeeMgr">
+        <soap:binding style="document" transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS"/>
+        <jms:binding messageFormat="bytes"/>
+        <wsdl:operation name="EmployeeDetails">
+            <soap:operation style="document" soapAction="/Services/EmployeeWSDL-service0.serviceagent/EmployeeMgrEndpoint0/EmployeeDetails"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="Request"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="Response"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:message name="EmployeeInput">
+        <wsdl:part name="Request" element="ns0:Employee"/>
+    </wsdl:message>
+    <wsdl:message name="EmployeeOutput">
+        <wsdl:part name="Response" element="ns1:EmployeeDetails"/>
+    </wsdl:message>
+</wsdl:definitions>
