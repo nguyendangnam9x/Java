@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:wsdlPfx="http://xmlns.example.com/1698139437999">
+    <wsdl:import namespace="http://xmlns.example.com/1698139437999" location="/WSDLs/EmployeeWSDL.wsdl"/>
+    <pd:name>Services/EmployeeMgrEmployeeDetails.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType wsMsgRef="wsdlPfx:EmployeeInput"/>
+    <pd:startX>150</pd:startX>
+    <pd:startY>65</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endType wsMsgRef="wsdlPfx:EmployeeOutput"/>
+    <pd:endX>450</pd:endX>
+    <pd:endY>65</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1698140121020</pd:targetNamespace>
+</pd:ProcessDefinition>
