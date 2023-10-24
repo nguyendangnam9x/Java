@@ -11,13 +11,13 @@
             <Response>
                 <ns:EmployeeDetails>
                     <ns:EmployeeAge>
-                        <xsl:value-of select="&quot;1&quot;"/>
+                        <xsl:value-of select="&quot;30&quot;"/>
                     </ns:EmployeeAge>
                     <ns:EmployeeDesignation>
-                        <xsl:value-of select="&quot;2&quot;"/>
+                        <xsl:value-of select="&quot;namnd&quot;"/>
                     </ns:EmployeeDesignation>
                     <ns:EmployeeName>
-                        <xsl:value-of select="&quot;3&quot;"/>
+                        <xsl:value-of select="&quot;Nguyen Dang Nam&quot;"/>
                     </ns:EmployeeName>
                 </ns:EmployeeDetails>
             </Response>
